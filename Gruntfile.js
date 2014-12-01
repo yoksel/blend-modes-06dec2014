@@ -165,7 +165,8 @@ module.exports = function(grunt) {
                         '!License.md',
                         '!Readme.md',
                         '!bower.json',
-                        '!package.json'
+                        '!package.json',
+                        '!map.txt'
                     ],
                     dest: 'temp/pres/'
                 },{
