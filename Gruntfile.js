@@ -144,52 +144,105 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '<%= project.css_src %>{,*/}*.{scss,sass}',
-                tasks: ['includereplace', 'sass:dev', 'autoprefixer'],
+                tasks: ['sass:dev', 'autoprefixer'],
                 options: {
                     livereload: 35731,
                 },
             }
         },
 
-        /**
-         * https://github.com/alanshaw/grunt-include-replace
-         * Include files for build version
-         */
-        includereplace: {
-            mail: {
-                options: {
-                    // Task-specific options go here.
-                },
-                // Files to perform replacements and includes with
-                src: 'index-src.html',
-                // Destination directory to copy files to
-                dest: 'index.html'
+
+        copy: {
+            prepare: {
+                files: [{
+                    src: [
+                        '**',
+                        '!node_modules/**',
+                        '!_src/**',
+                        '!bower_components/**',
+                        '!Contributing.md',
+                        '!Gruntfile.js',
+                        '!License.md',
+                        '!Readme.md',
+                        '!bower.json',
+                        '!package.json'
+                    ],
+                    dest: 'temp/pres/'
+                },{
+                    expand: true,
+                    cwd: 'node_modules/shower-core/',
+                    src: [
+                        '**',
+                        '!package.json',
+                        '!Readme.md'
+                    ],
+                    dest: 'temp/pres/shower/'
+                },{
+                    expand: true,
+                    cwd: 'node_modules/shower-ribbon/',
+                    src: [
+                        '**',
+                        '!package.json',
+                        '!Readme.md'
+                    ],
+                    dest: 'temp/pres/shower/themes/ribbon/'
+                },{
+                    expand: true,
+                    cwd: 'node_modules/shower-bright/',
+                    src: [
+                        '**',
+                        '!package.json',
+                        '!Readme.md'
+                    ],
+                    dest: 'temp/pres/shower/themes/bright/'
+                }]
             }
         },
 
-        copy: {
-            build: {
-                files: [
-                // makes all src relative to cwd
-                // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
-                    {
-                        expand: true,
-                        src: ['node_modules/shower-core/**'],
-                        dest: 'assets/',
-                        rename: function(dest, src) {
-                          return dest + src.replace(/node_modules/, "");
-                        }
-                    }, {
-                        expand: true,
-                        src: ['node_modules/shower-bright/**'],
-                        dest: 'assets/',
-                        rename: function(dest, src) {
-                          return dest + src.replace(/node_modules/, "");
-                        }
-                    }
-                ]
+        replace: {
+            core: {
+                src: 'temp/pres/index.html',
+                overwrite: true,
+                replacements: [{
+                    from: /(node_modules|bower_components)\/shower-core/g,
+                    to: 'shower'
+                },{
+                    from: /(node_modules|bower_components)\/shower-(ribbon|bright)/g,
+                    to: 'shower/themes/$2'
+                }]
+            },
+            themes: {
+                src: 'temp/pres/shower/themes/*/index.html',
+                overwrite: true,
+                replacements: [{
+                    from: '../shower-core', to: '../..'
+                }]
             }
         },
+
+        'gh-pages': {
+            options: {
+                base: 'temp/pres',
+                clone: 'temp/clone'
+            },
+            src: ['**']
+        },
+
+        compress: {
+            shower: {
+                options: {
+                    archive: 'archive.zip'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'temp/pres/',
+                    src: '**',
+                    dest: '.'
+                }]
+            }
+        },
+
+        clean: ['temp'],
 
         connect: {
             server: {
@@ -221,11 +274,11 @@ module.exports = function(grunt) {
         // 'svgmin'
     ]);
 
-    grunt.registerTask('build', [
-        'sass:dist',
-        'autoprefixer',
+    grunt.registerTask('publish', [
         'copy',
-        'includereplace'
+        'replace',
+        'gh-pages',
+        'clean'
     ]);
 
 };

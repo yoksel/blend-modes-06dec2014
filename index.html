@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=792, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/shower-bright/styles/screen.css">
+    <link rel="stylesheet" href="node_modules/shower-bright/styles/screen.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/flipping.css">
 </head>
@@ -449,6 +449,21 @@
     </div></section>
 
     <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <div class="demo--dancing-shadows">
+          <h1 class="demo--dancing-shadows__title">
+            <span class="text-wrapper">
+              <span class="text-items">
+                <span class="text-item text-item--1">Aurora</span>
+                <span class="text-item text-item--2">Borealis</span>
+                <span class="text-item text-item--3">Text</span>
+              </span>
+             </span>
+          </h1>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
     <section class="slide"><div>
         <h2 class="free-fly">Isolation</h2>
     </div></section>
@@ -620,13 +635,18 @@
 
     <!-- Slide -->
     <section class="slide"><div>
-        <div class="next"><h3>Проблемы</h3>
+        <div><h3>Проблемы</h3>
         <ul>
-            <li>IE9 не поддерживает фильтры</li>
-            <li>Фон ресайзится с картинкой</li>
+            <li>IE9</li>
+            <li class="next">Фон тянется</li>
             <li class="next">Полосы между картинками при масштабировании</li>
-            <li class="next">В разных браузерах доступны разные режимы наложения</li>
+            <li class="next">В разных браузерах разные режимы наложения</li>
         </ul></div>
+        <h3 class="next">Преимущества</h3>
+        <ul>
+            <li class="next">IE10+</li>
+            <li class="next">Поддержка режимов лучше, чем в CSS</li>
+        </ul>
     </div></section>
 
 
@@ -666,7 +686,7 @@
     </p>
 
     <div class="progress"><div></div></div>
-    <script src="assets/shower-core/shower.min.js"></script>
+    <script src="node_modules/shower-core/shower.min.js"></script>
     <script src="assets/js/jquery-2.1.0.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/selectmode.js"></script>
