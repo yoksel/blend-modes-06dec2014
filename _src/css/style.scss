@@ -158,7 +158,9 @@ svg {
     font-size: .6em;
     color: #777;
     }
-
+.full .progress {
+    z-index: 2;
+    }
 /* Footer
 ------------------------- */
 .slide footer {

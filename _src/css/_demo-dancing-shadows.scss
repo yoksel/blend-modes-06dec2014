@@ -1,4 +1,4 @@
-$shadow-size: 15vh;
+$shadow-size: 13.5vh;
 $shadow-offset: $shadow-size * 1.5;
 $shadow-colors: purple, violet, teal, orangered, yellow, crimson, yellowgreen, orange, darkturquoise, pink, steelblue,  turquoise, coral, skyblue,  darkviolet, gold, darkslateblue;
 $colors-max: length($shadow-colors);
@@ -10,7 +10,7 @@ $title-text-color: white;
 $title-bg-color: black;
 
 
-$matrix-v: 6;
+$matrix-v: 4;
 $matrix-h: 5;
 
 @function get_color($position){
@@ -67,7 +67,7 @@ $matrix-h: 5;
     bottom: 0;
     left: 0;
     margin: auto;
-    font-size: 27vmin;
+    font-size: 175px; /*23vmin*/
     line-height: 1.05;
     font-style: italic;
     font-family: Lobster;
@@ -88,7 +88,8 @@ $matrix-h: 5;
     content: '';
     display: block;
     position: absolute;
-    left: 20%;
+    top: 20%;
+    left: 24%;
     border-radius: 50%;
     box-shadow: shadow-matrix();
     }
