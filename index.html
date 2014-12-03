@@ -237,7 +237,7 @@
         <ul class="demo-knight-svg">
             <li class="demo-knight-svg__item">
                 <img src="assets/img/demos/knights/knight-M.jpg">
-                <div class="demo-knight-png__weight">JPEG, 21 Kb</div>
+                <div class="demo-knight-png__weight">JPEG, 20 Kb</div>
             </li>
 
             <li class="demo-knight-svg__item next"  data-sign="+">
@@ -250,7 +250,7 @@
                     <image xlink:href="assets/img/demos/knights/knight-M.jpg" width="100%" height="100%"
                           mask="url(#mask)"/>
                 </svg>
-                <div class="demo-knight-png__weight">JPEG + PNG, 25 Kb</div>
+                <div class="demo-knight-png__weight">JPEG + PNG, 24 Kb</div>
             </li>
         </ul>
     </div></section>
@@ -476,10 +476,10 @@
 
         <pre class="next"><code>.block { </code>
         <code>    opacity: .5; <span class="comment">/* или */</span></code>
-        <code>    transform: translateZ(0); <span class="comment">/* или */</span></code>
-        <code>    mask: url(#mask); <span class="comment">/* или */</span></code>
-        <code>    filter: blur(); <span class="comment">/* или */</span></code>
-        <code>    }</code></pre>
+        <code class="next">    transform: translateZ(0); <span class="comment">/* или */</span></code>
+        <code class="next">    mask: url(#mask); <span class="comment">/* или */</span></code>
+        <code class="next">    filter: blur();</code>
+        <code class="next">    }</code></pre>
 
         <!-- <ul>
             <li>opacity</li>
@@ -551,7 +551,7 @@
     <div class="next"><h3>Проблемы</h3>
     <ul>
         <li><code>mix-blend-mode</code> + <code>background-blend-mode</code> могут уронить Firefox</li>
-        <li class="next">в Firefox градиенты с <code>color-burn</code> отрисовываются без полутонов</li>
+        <li class="next">в Firefox градиенты с <code>color-burn</code> без полутонов</li>
         <li class="next">в Safari не работают режимы <code>hue</code>, <code>saturation</code>, <code>color</code>, <code>luminosity</code></li>
     </ul></div>
     </div></section>
@@ -637,15 +637,15 @@
     <section class="slide"><div>
         <div><h3>Проблемы</h3>
         <ul>
-            <li>IE9</li>
-            <li class="next">Фон тянется</li>
-            <li class="next">Полосы между картинками при масштабировании</li>
-            <li class="next">В разных браузерах разные режимы наложения</li>
+            <li>IE9 не поддерживаются фильтры</li>
+            <li class="next">Фон тянется вместе с картинкой</li>
+            <li class="next">При масштабировании появляются полосы между картинками</li>
+            <li class="next">В разных браузерах доступны разные наборы режимов</li>
         </ul></div>
         <h3 class="next">Преимущества</h3>
         <ul>
             <li class="next">IE10+</li>
-            <li class="next">Поддержка режимов лучше, чем в CSS</li>
+            <li class="next">Поддержка браузерами лучше, чем у CSS-свойств</li>
         </ul>
     </div></section>
 
