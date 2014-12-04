@@ -1,10 +1,9 @@
 .slide--dragons {
-  background:
-    url(../img/demos/knights/paper.jpeg);
+  background: #f7edba url(../img/demos/knights/paper.jpeg);
   background-position: 50% 50%;
   }
 .demo-dragons {
-  width: 780px;
+  width: 700px;
   margin: 0 auto;
   font-family: Georgia, serif;
   &:after {
@@ -85,8 +84,8 @@
 .has-shapes {
     .pic--dragon {
         margin: 0 2em 2em -3em;
-        -webkit-shape-outside: polygon(0 0, 53% 0, 61% 13%, 96% 13%, 94% 36%, 81% 52%, 87% 87%, 0 87%);
-        shape-outside: polygon(0 0, 53% 0, 61% 13%, 96% 13%, 94% 36%, 81% 52%, 87% 87%, 0 87%);
+        -webkit-shape-outside: polygon(0 0, 91% 0%, 94% 43%, 83% 57%, 88% 85%, 0 85%);
+        shape-outside: polygon(0 0, 91% 0%, 94% 43%, 83% 57%, 88% 85%, 0 85%);
         }
     .pic--knight {
         margin: 0 -3em 2em 1em;

@@ -500,7 +500,7 @@
                 <dd class="list-isolation__item"></dd>
                 <dd class="list-isolation__item"></dd>
             </dl>
-            <dl class="list-isolation list-isolation--isolate">
+            <dl class="list-isolation list-isolation--isolate next">
                 <dt class="list-isolation__title">opacity: .99;</dt>
                 <dd class="list-isolation__item"></dd>
                 <dd class="list-isolation__item"></dd>
@@ -550,9 +550,9 @@
 
     <div class="next"><h3>Проблемы</h3>
     <ul>
-        <li><code>mix-blend-mode</code> + <code>background-blend-mode</code> могут уронить Firefox</li>
-        <li class="next">в Firefox градиенты с <code>color-burn</code> без полутонов</li>
+        <li class="next"><code>mix-blend-mode</code> + <code>background-blend-mode</code> могут уронить Firefox</li>
         <li class="next">в Safari не работают режимы <code>hue</code>, <code>saturation</code>, <code>color</code>, <code>luminosity</code></li>
+        <!-- <li class="next">в Firefox проблемы с тенями и <code>color-burn</code></li> -->
     </ul></div>
     </div></section>
 
@@ -637,10 +637,10 @@
     <section class="slide"><div>
         <div><h3>Проблемы</h3>
         <ul>
-            <li>IE9 не поддерживаются фильтры</li>
+            <li class="next">IE9 не поддерживает фильтры</li>
             <li class="next">Фон тянется вместе с картинкой</li>
             <li class="next">При масштабировании появляются полосы между картинками</li>
-            <li class="next">В разных браузерах доступны разные наборы режимов</li>
+            <li class="next">В разных браузерах доступны разные режимы (<a href="http://codepen.io/yoksel/full/BiExv/">демо для тестов</a>)</li>
         </ul></div>
         <h3 class="next">Преимущества</h3>
         <ul>
@@ -676,11 +676,6 @@
             </ul>
     </div></section>
 
-    <!-- <section class="slide slide--horcenter"><div>
-        <h4>Онлайн: <a href="http://yoksel.github.io/blend-modes-26okt2014/">yoksel.github.io/blend-modes-26okt2014/</a></h4>
-        <img src="./assets/img/qr-code.svg" class="qr-code" />
-    </div></section> -->
-
     <p class="badge">
         <a href="https://github.com/shower/shower">Powered by Shower</a>
     </p>
@@ -693,7 +688,7 @@
     <script src="assets/js/togglemode.js"></script>
     <script src="assets/js/colorize.js"></script>
     <script src="assets/js/flipping.js"></script>
-    <script src="//localhost:35731/livereload.js"></script>
+    <!-- <script src="//localhost:35731/livereload.js"></script> -->
     <!-- Copyright © 2014 yoksel. -->
 </body>
 </html>
